@@ -10,13 +10,15 @@ const CenterCtaSection = () => {
 
                     <div className="relative z-10 flex flex-col items-center">
                         <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">Ready to Explosively Grow Your Audience?</h2>
-                        <Button
-                            variant="secondary"
-                            size="lg"
-                            className="bg-white text-purple-600 hover:bg-gray-100 font-bold px-8 lg:w-auto w-full"
-                        >
-                            Boost Your Profile Now
-                        </Button>
+                        <a href="https://growth.getfame.social" target="_blank" rel="noopener noreferrer" className="w-full lg:w-auto">
+                            <Button
+                                variant="secondary"
+                                size="lg"
+                                className="bg-white text-purple-600 hover:bg-gray-100 font-bold px-8 lg:w-auto w-full"
+                            >
+                                Boost Your Profile Now
+                            </Button>
+                        </a>
                     </div>
                 </div>
             </div>

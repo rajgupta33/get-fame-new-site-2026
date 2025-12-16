@@ -22,13 +22,7 @@ const InnovationVision = () => {
                     We are building the next generation of marketing engines. From predictive analytics to automated content scaling, our Innovation Lab is defining what's possible.
                 </p>
 
-                <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-white/20 text-white hover:bg-white/10 backdrop-blur-sm rounded-xl px-10"
-                >
-                    Explore Our Innovation Lab
-                </Button>
+
             </div>
         </section>
     );

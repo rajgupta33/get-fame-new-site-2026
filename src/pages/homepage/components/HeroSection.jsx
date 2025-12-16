@@ -75,7 +75,7 @@ const HeroSection = () => {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <Link to="/contact-strategy-session">
+                            <Link to="/contact-us">
                                 <Button
                                     variant="default"
                                     size="lg"
@@ -95,10 +95,8 @@ const HeroSection = () => {
                             <div className="absolute inset-0 gradient-brand rounded-3xl blur-xl opacity-20"></div>
                             <div className="relative bg-surface/80 backdrop-blur-md rounded-3xl p-8 border border-border shadow-floating">
                                 <div className="flex items-center justify-between mb-6">
-                                    <h3 className="text-xl font-bold text-foreground">Live Campaign Metrics</h3>
+                                    <h3 className="text-xl font-bold text-foreground">Campaign Metrics</h3>
                                     <div className="flex items-center space-x-2 text-success">
-                                        <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
-                                        <span className="text-sm font-medium">Live</span>
                                     </div>
                                 </div>
 

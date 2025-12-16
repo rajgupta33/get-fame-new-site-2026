@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 import Header from '../../components/ui/Header';
 import Icon from '../../components/AppIcon';
 import ItServiceCard from './components/ItServiceCard';
@@ -154,24 +155,18 @@ const ServicesIT = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center w-full sm:w-auto">
-                            <Button
-                                variant="default"
-                                size="lg"
-                                iconName="MessageSquare"
-                                iconPosition="left"
-                                className="gradient-brand shadow-brand animate-pulse-slow w-full sm:w-auto justify-center"
-                            >
-                                Get Free Tech Consultation
-                            </Button>
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                iconName="Layers"
-                                iconPosition="left"
-                                className="border-primary/20 text-primary hover:bg-primary/10 w-full sm:w-auto justify-center"
-                            >
-                                View Tech Stack
-                            </Button>
+                            <Link to="/contact-us" className="w-full sm:w-auto">
+                                <Button
+                                    variant="default"
+                                    size="lg"
+                                    iconName="MessageSquare"
+                                    iconPosition="left"
+                                    className="gradient-brand shadow-brand animate-pulse-slow w-full justify-center"
+                                >
+                                    Get Free Tech Consultation
+                                </Button>
+                            </Link>
+
                         </div>
                     </div>
                 </section>
@@ -222,13 +217,15 @@ const ServicesIT = () => {
 
                 {/* Sticky Mobile CTA */}
                 <div className={`fixed bottom-0 left-0 right-0 p-4 bg-background/90 backdrop-blur-md border-t border-border z-50 transition-transform duration-300 lg:hidden ${showStickyCta ? 'translate-y-0' : 'translate-y-full'}`}>
-                    <Button
-                        variant="default"
-                        size="lg"
-                        className="w-full gradient-brand shadow-lg justify-center"
-                    >
-                        Get Free Tech Consultation
-                    </Button>
+                    <Link to="/contact-us">
+                        <Button
+                            variant="default"
+                            size="lg"
+                            className="w-full gradient-brand shadow-lg justify-center"
+                        >
+                            Get Free Tech Consultation
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </>

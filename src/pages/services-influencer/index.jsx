@@ -72,13 +72,15 @@ const ServicesInfluencer = () => {
 
                 {/* Sticky Mobile CTA */}
                 <div className={`fixed bottom-0 left-0 right-0 p-4 bg-background/90 backdrop-blur-md border-t border-border z-50 transition-transform duration-300 lg:hidden ${showStickyCta ? 'translate-y-0' : 'translate-y-full'}`}>
-                    <Button
-                        variant="default"
-                        size="lg"
-                        className="w-full gradient-brand shadow-lg justify-center"
-                    >
-                        Boost Your Profile Now
-                    </Button>
+                    <a href="https://growth.getfame.social" target="_blank" rel="noopener noreferrer">
+                        <Button
+                            variant="default"
+                            size="lg"
+                            className="w-full gradient-brand shadow-lg justify-center"
+                        >
+                            Boost Your Profile Now
+                        </Button>
+                    </a>
                 </div>
             </div>
         </>

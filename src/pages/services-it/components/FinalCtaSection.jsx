@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../../../components/ui/Button';
 
 const FinalCtaSection = () => {
@@ -10,24 +11,18 @@ const FinalCtaSection = () => {
                     Let’s Build Technology <br /> That Works for Your Growth
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8 w-full max-w-md mx-auto sm:max-w-none">
-                    <Button
-                        variant="default"
-                        size="lg"
-                        iconName="MessageSquare"
-                        iconPosition="left"
-                        className="gradient-brand shadow-brand hover:scale-105 transition-transform w-full sm:w-auto justify-center"
-                    >
-                        Get Free Tech Consultation
-                    </Button>
-                    <Button
-                        variant="outline"
-                        size="lg"
-                        iconName="Code"
-                        iconPosition="left"
-                        className="border-primary/20 text-primary hover:bg-primary/10 w-full sm:w-auto justify-center"
-                    >
-                        View Development Process
-                    </Button>
+                    <Link to="/contact-us" className="w-full sm:w-auto">
+                        <Button
+                            variant="default"
+                            size="lg"
+                            iconName="MessageSquare"
+                            iconPosition="left"
+                            className="gradient-brand shadow-brand hover:scale-105 transition-transform w-full justify-center"
+                        >
+                            Get Free Tech Consultation
+                        </Button>
+                    </Link>
+
                 </div>
             </div>
         </section>

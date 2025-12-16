@@ -34,15 +34,17 @@ const InfluencerHero = () => {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center w-full sm:w-auto">
-                    <Button
-                        variant="default"
-                        size="lg"
-                        iconName="Rocket"
-                        iconPosition="left"
-                        className="gradient-brand shadow-brand animate-pulse-slow w-full sm:w-auto justify-center"
-                    >
-                        Boost Your Profile Now
-                    </Button>
+                    <a href="https://growth.getfame.social" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                        <Button
+                            variant="default"
+                            size="lg"
+                            iconName="Rocket"
+                            iconPosition="left"
+                            className="gradient-brand shadow-brand animate-pulse-slow w-full sm:w-auto justify-center"
+                        >
+                            Boost Your Profile Now
+                        </Button>
+                    </a>
                 </div>
             </div>
         </section>

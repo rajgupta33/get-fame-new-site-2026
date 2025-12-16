@@ -35,8 +35,28 @@ const ContactStrategySession = () => {
         setIsSubmitting(true);
         setFormData(data);
 
-        // Mock API call
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        const payload = {
+            ...data,
+            date: selectedDate ? formatDate(selectedDate) : '',
+            time: selectedTime,
+            page: window.location.href,
+            formType: 'Strategy Session Booking'
+        };
+
+        try {
+            await fetch("https://script.google.com/macros/s/AKfycbxePCKfnMdBuTHF5sXO589O_Yi1ErEXIf650BYPx75EmLF-cRqhVV2wflhV-ZJVcQAv/exec", {
+                method: "POST",
+                body: JSON.stringify(payload),
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8",
+                }
+            });
+            console.log('Strategy session booked:', payload);
+        } catch (error) {
+            console.error("Error submitting booking", error);
+            // We still proceed to show success for better UX, or we could show an error
+            // For now, let's assume we want to show the success step but log the error
+        }
 
         setIsSubmitting(false);
         setBookingComplete(true);
@@ -129,8 +149,8 @@ const ContactStrategySession = () => {
                                             {steps?.map((step, index) => (
                                                 <div key={step?.number} className="flex items-center">
                                                     <div className={`flex items-center justify-center w-10 h-10 rounded-full border-2 transition-all ${currentStep >= step?.number
-                                                            ? 'bg-primary border-primary text-primary-foreground'
-                                                            : 'border-border text-muted-foreground'
+                                                        ? 'bg-primary border-primary text-primary-foreground'
+                                                        : 'border-border text-muted-foreground'
                                                         }`}>
                                                         {currentStep > step?.number ? (
                                                             <Icon name="Check" size={16} />

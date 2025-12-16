@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Icon from '../../../components/AppIcon';
 import Button from '../../../components/ui/Button';
 
@@ -172,14 +173,16 @@ const ItServiceCard = ({ service, isExpanded, onToggle, onCalculate }) => {
 
                     {/* Action Buttons */}
                     <div className="flex flex-col gap-3 mt-auto pt-4 border-t border-border/50 lg:border-none lg:pt-0">
-                        <Button
-                            variant="default"
-                            iconName="ArrowRight"
-                            iconPosition="right"
-                            className="w-full gradient-brand hover:gradient-brand-hover shadow-brand justify-center"
-                        >
-                            Get Started
-                        </Button>
+                        <Link to="/contact-us" className="w-full">
+                            <Button
+                                variant="default"
+                                iconName="ArrowRight"
+                                iconPosition="right"
+                                className="w-full gradient-brand hover:gradient-brand-hover shadow-brand justify-center"
+                            >
+                                Get Started
+                            </Button>
+                        </Link>
                         <Button
                             variant="outline"
                             iconName="Calculator"

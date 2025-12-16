@@ -71,19 +71,30 @@ const BetaInterestForm = ({ isOpen, onClose, selectedProgram }) => {
         e?.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 2000));
-
-        console.log('Beta interest form submitted:', {
+        const payload = {
             ...formData,
-            program: selectedProgram?.title
-        });
+            program: selectedProgram?.title,
+            page: window.location.href,
+            formType: 'Beta Interest'
+        };
 
-        setIsSubmitting(false);
-        onClose();
-
-        // Show success message (in real app, you'd handle this properly)
-        alert('Thank you for your interest! Our innovation team will contact you within 24 hours.');
+        try {
+            await fetch("https://script.google.com/macros/s/AKfycbxePCKfnMdBuTHF5sXO589O_Yi1ErEXIf650BYPx75EmLF-cRqhVV2wflhV-ZJVcQAv/exec", {
+                method: "POST",
+                body: JSON.stringify(payload),
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8",
+                }
+            });
+            console.log('Beta interest form submitted:', payload);
+            alert('Thank you for your interest! Our innovation team will contact you within 24 hours.');
+            onClose();
+        } catch (error) {
+            console.error("Error submitting form", error);
+            alert("There was an error sending your application. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     if (!isOpen) return null;

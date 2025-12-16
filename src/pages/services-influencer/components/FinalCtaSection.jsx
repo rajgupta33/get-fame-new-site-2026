@@ -14,13 +14,15 @@ const FinalCtaSection = () => {
                     Grow smarter. Get visible. Get paid.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md mx-auto sm:max-w-none">
-                    <Button
-                        variant="secondary"
-                        size="lg"
-                        className="bg-white text-purple-900 hover:bg-gray-100 font-bold w-full sm:w-auto justify-center"
-                    >
-                        Boost Your Profile Now
-                    </Button>
+                    <a href="https://growth.getfame.social" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                        <Button
+                            variant="secondary"
+                            size="lg"
+                            className="bg-white text-purple-900 hover:bg-gray-100 font-bold w-full sm:w-auto justify-center"
+                        >
+                            Boost Your Profile Now
+                        </Button>
+                    </a>
                 </div>
             </div>
         </section>

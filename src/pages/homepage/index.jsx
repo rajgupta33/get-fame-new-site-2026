@@ -40,7 +40,7 @@ const Homepage = () => {
                 <SocialProofSection />
 
                 {/* 5. Transformation Stories */}
-                <FeaturedCaseStudy />
+                {/* 5. Transformation Stories - REMOVED */}
 
                 {/* 6. Future / AI Vision */}
                 <InnovationVision />

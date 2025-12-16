@@ -1,12 +1,13 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Header from '../../components/ui/Header';
 import Icon from '../../components/AppIcon';
 import Button from '../../components/ui/Button';
 import Footer from '../../components/ui/Footer';
 
-const CaseStudyCard = ({ title, category, metric, description, image }) => (
+const CaseStudyCard = ({ title, category, metric, description, image, link }) => (
     <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black/50 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:border-primary/50">
         <div className="aspect-video w-full overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
@@ -28,14 +29,25 @@ const CaseStudyCard = ({ title, category, metric, description, image }) => (
             <p className="text-muted-foreground mb-6 line-clamp-2">
                 {description}
             </p>
-            <Button variant="outline" size="sm" iconName="ArrowRight" iconPosition="right" className="w-full group-hover:bg-primary/10">
-                Read Case Study
+            <Button
+                asChild={!!link}
+                variant="outline"
+                size="sm"
+                iconName="ArrowRight"
+                iconPosition="right"
+                className="w-full group-hover:bg-primary/10"
+            >
+                {link ? (
+                    <Link to={link}>Read Case Study</Link>
+                ) : (
+                    "Read Case Study"
+                )}
             </Button>
         </div>
     </div>
 );
 
-const BlogCard = ({ title, category, date, excerpt, image }) => (
+const BlogCard = ({ title, category, date, excerpt, image, link }) => (
     <div className="group flex flex-col h-full overflow-hidden rounded-xl border border-white/10 bg-card/50 hover:bg-card/80 transition-colors">
         <div className="aspect-[1.5] overflow-hidden">
             <img
@@ -51,13 +63,15 @@ const BlogCard = ({ title, category, date, excerpt, image }) => (
                 <span>{date}</span>
             </div>
             <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                {title}
+                <Link to={link || '#'}>{title}</Link>
             </h3>
             <p className="text-muted-foreground text-sm line-clamp-3 mb-6 flex-grow">
                 {excerpt}
             </p>
             <div className="flex items-center text-sm font-medium text-primary">
-                Read Article <Icon name="ArrowRight" size={14} className="ml-2 transition-transform group-hover:translate-x-1" />
+                <Link to={link || '#'} className="flex items-center">
+                    Read Article <Icon name="ArrowRight" size={14} className="ml-2 transition-transform group-hover:translate-x-1" />
+                </Link>
             </div>
         </div>
     </div>
@@ -66,49 +80,55 @@ const BlogCard = ({ title, category, date, excerpt, image }) => (
 const GrowthCaseStudies = () => {
     const caseStudies = [
         {
-            title: "Scaling SaaS to 10M",
-            category: "B2B Marketing",
-            metric: "+450%",
-            description: "How we helped a fintech startup dominate their niche through targeted LinkedIn campaigns and content strategy.",
-            image: "/images/case-saas.jpg"
+            title: "Starbucks: Billion-Dollar Experience",
+            category: "Brand Growth",
+            metric: "40,000+",
+            description: "How Starbucks turned coffee into a global lifestyle brand. An in-depth look at their origin, failures, and bounce-back strategy.",
+            image: "/images/starbucks-case-study.png",
+            link: "/growth-case-studies/starbucks-billion-dollar-experience"
         },
         {
-            title: "Fashion Brand Virality",
-            category: "Influencer Growth",
-            metric: "2.1M",
-            description: "Orchestrating a TikTok takeover with 50 micro-influencers that generated millions of organic views in one week.",
-            image: "/images/case-fashion.jpg"
+            title: "Airbnb: Community-Led Growth",
+            category: "Community Growth",
+            metric: "190+",
+            description: "From air mattresses to a global brand. How Airbnb used community, trust, and storytelling to disrupt the travel industry.",
+            image: "/images/airbnb-case.png",
+            link: "/growth-case-studies/airbnb-community-led-growth"
         },
         {
-            title: "E-commerce Optimization",
-            category: "IT Services",
-            metric: "3.5x",
-            description: "Rebuilding a legacy platform to Next.js, improving site speed by 400% and tripling conversion rates.",
-            image: "/images/case-ecom.jpg"
+            title: "Canva: SEO & Product Growth",
+            category: "SaaS Growth",
+            metric: "150M+",
+            description: "The free-tool SEO strategy that acquired 150M+ users without aggressive ads. A blueprint for product-led growth.",
+            image: "/images/canva-case-study.png",
+            link: "/growth-case-studies/canva-seo-product-growth"
         }
     ];
 
     const blogs = [
         {
-            title: "The Future of AI in Digital Marketing",
-            category: "Trends",
-            date: "Dec 12, 2024",
-            excerpt: "Artificial Intelligence isn't just a buzzword using it to personalize customer journeys at scale is the new competitive advantage.",
-            image: "/images/blog-ai.jpg"
-        },
-        {
-            title: "Why Micro-Influencers Drive Better ROI",
+            title: "Why SEO Is a Long-Term Asset, Not an Expense",
             category: "Strategy",
-            date: "Dec 08, 2024",
-            excerpt: "Engagement rates plummet as follower counts rise. Here's why smart brands are pivoting to smaller, niche creators.",
-            image: "/images/blog-influencer.jpg"
+            date: "Dec 17, 2024",
+            excerpt: "Is SEO a cost or an investment? Discover why smart businesses treat SEO as a compounding asset that builds wealth.",
+            image: "/images/blog-seo-asset.png",
+            link: "/insights/seo-asset-strategy"
         },
         {
-            title: "Web Vitals: The SEO Killer",
-            category: "Technical",
-            date: "Nov 28, 2024",
-            excerpt: "Google's latest update punishes slow sites harder than ever. A deep dive into Core Web Vitals and how to optimize them.",
-            image: "/images/blog-seo.jpg"
+            title: "Why Most Businesses Lose Money on Facebook & Google Ads",
+            category: "PPC",
+            date: "Dec 15, 2024",
+            excerpt: "Burning budget on ads with no ROI? Learn the top reasons businesses in competitive markets fail at PPC and how to plug the leaks.",
+            image: "/images/blog-ads-roi.png",
+            link: "/insights/ads-roi-fix"
+        },
+        {
+            title: "The Science Behind Premium Pricing",
+            category: "Psychology",
+            date: "Dec 10, 2024",
+            excerpt: "Frightened to raise your prices? Discover the psychology of premium pricing and why clients often equate higher cost with higher value.",
+            image: "/images/blog-premium-pricing.png",
+            link: "/insights/premium-pricing-psychology"
         }
     ];
 

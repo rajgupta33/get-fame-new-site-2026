@@ -20,7 +20,7 @@ const Header = () => {
     const navigationItems = [
         { name: 'Home', path: '/homepage', icon: 'Home' },
         { name: 'About', path: '/about-us', icon: 'Info' },
-        { name: '360 Marketing', path: '/services/360-marketing', icon: 'Share2' },
+        { name: '360° Marketing', path: '/services/360-marketing', icon: 'Share2' },
         { name: 'Influencer', path: '/services/influencer-growth', icon: 'Users' },
         { name: 'IT Services', path: '/services/it-services', icon: 'Monitor' },
         { name: 'Case Studies', path: '/growth-case-studies', icon: 'TrendingUp' },
@@ -57,7 +57,7 @@ const Header = () => {
                         <img
                             src="/images/logo_v2.png"
                             alt="GetFame"
-                            className="h-[56px] lg:h-[70px] w-auto object-contain"
+                            className="h-[70px] lg:h-[70px] w-auto object-contain"
                         />
                     </Link>
 
@@ -89,26 +89,30 @@ const Header = () => {
 
                     {/* Desktop CTA */}
                     <div className="hidden lg:flex items-center space-x-4">
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            iconName="Phone"
-                            iconPosition="left"
-                            iconSize={16}
-                            className="border-primary/20 text-primary hover:bg-primary/10"
-                        >
-                            Book Call
-                        </Button>
-                        <Button
-                            variant="default"
-                            size="sm"
-                            iconName="ArrowRight"
-                            iconPosition="right"
-                            iconSize={16}
-                            className="gradient-brand hover:gradient-brand-hover shadow-brand"
-                        >
-                            Start Your Fame
-                        </Button>
+                        <Link to="/contact-us">
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                iconName="Phone"
+                                iconPosition="left"
+                                iconSize={16}
+                                className="border-primary/20 text-primary hover:bg-primary/10"
+                            >
+                                Book Call
+                            </Button>
+                        </Link>
+                        <Link to="/contact-us">
+                            <Button
+                                variant="default"
+                                size="sm"
+                                iconName="ArrowRight"
+                                iconPosition="right"
+                                iconSize={16}
+                                className="gradient-brand hover:gradient-brand-hover shadow-brand"
+                            >
+                                Start Your Fame
+                            </Button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -155,28 +159,30 @@ const Header = () => {
 
                         {/* Mobile CTAs */}
                         <div className="mt-6 space-y-3">
-                            <Button
-                                variant="outline"
-                                fullWidth
-                                iconName="Phone"
-                                iconPosition="left"
-                                iconSize={16}
-                                className="border-primary/20 text-primary hover:bg-primary/10"
-                                onClick={closeMenu}
-                            >
-                                Book Strategy Call
-                            </Button>
-                            <Button
-                                variant="default"
-                                fullWidth
-                                iconName="ArrowRight"
-                                iconPosition="right"
-                                iconSize={16}
-                                className="gradient-brand hover:gradient-brand-hover shadow-brand"
-                                onClick={closeMenu}
-                            >
-                                Start Your Fame Architecture
-                            </Button>
+                            <Link to="/contact-us" className="w-full" onClick={closeMenu}>
+                                <Button
+                                    variant="outline"
+                                    fullWidth
+                                    iconName="Phone"
+                                    iconPosition="left"
+                                    iconSize={16}
+                                    className="border-primary/20 text-primary hover:bg-primary/10"
+                                >
+                                    Book Strategy Call
+                                </Button>
+                            </Link>
+                            <Link to="/contact-us" className="w-full" onClick={closeMenu}>
+                                <Button
+                                    variant="default"
+                                    fullWidth
+                                    iconName="ArrowRight"
+                                    iconPosition="right"
+                                    iconSize={16}
+                                    className="gradient-brand hover:gradient-brand-hover shadow-brand"
+                                >
+                                    Start Your Fame Architecture
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>

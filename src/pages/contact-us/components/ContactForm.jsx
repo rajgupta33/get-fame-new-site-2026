@@ -12,10 +12,29 @@ const ContactForm = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert('Message sent! We will contact you shortly.');
-        setFormData({ name: '', email: '', message: '' });
+
+        const payload = {
+            ...formData,
+            page: window.location.href,
+            formType: 'General Contact'
+        };
+
+        try {
+            await fetch("https://script.google.com/macros/s/AKfycbxePCKfnMdBuTHF5sXO589O_Yi1ErEXIf650BYPx75EmLF-cRqhVV2wflhV-ZJVcQAv/exec", {
+                method: "POST",
+                body: JSON.stringify(payload),
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8",
+                }
+            });
+            alert("Message sent successfully!");
+            setFormData({ name: '', email: '', message: '' });
+        } catch (error) {
+            console.error("Error submitting form", error);
+            alert("There was an error sending your message. Please try again.");
+        }
     };
 
     return (

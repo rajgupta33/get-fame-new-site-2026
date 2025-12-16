@@ -19,8 +19,8 @@ const ContactInfo = () => {
                     <div>
                         <h4 className="font-semibold text-foreground mb-1">Visit Us</h4>
                         <p className="text-muted-foreground">
-                            Cyber City, DLF Phase 2,<br />
-                            Gurugram, Haryana 122002,<br />
+                            Sanjay Palace,<br />
+                            Agra, Uttar Pradesh<br />
                             India
                         </p>
                     </div>
