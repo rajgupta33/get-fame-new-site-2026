@@ -19,6 +19,8 @@ const AboutUs = () => {
             </Helmet>
             <Header />
 
+
+
             {/* Hero Section */}
             <section className="pt-24 pb-16 px-6 lg:px-8 bg-gradient-to-br from-background via-primary/5 to-background">
                 <div className="max-w-7xl mx-auto text-center">
@@ -46,7 +48,7 @@ const AboutUs = () => {
                 <OurStory />
             </section>
 
-            {/* Footer Call to Action */}
+            {/* Footer CTA */}
             <section className="py-20 px-6 lg:px-8 text-center">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-3xl font-bold mb-6">Ready to Write Your Success Story?</h2>
